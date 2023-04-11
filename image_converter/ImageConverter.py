@@ -42,7 +42,7 @@ class ImageConverter:
         # Check if request was successful
         if r.status_code == requests.codes.ok:
             # Print success message
-            print("Image sent successfully!")
+            print("Image sent successfully")
 
             # Get download url
             self.download_url = r.json()['output_url']
@@ -51,7 +51,7 @@ class ImageConverter:
             return True
         else:
             # Print error message
-            print("Error sending image to Deep AI!")
+            print("Error sending image to Deep AI")
 
             # Print response
             print(r.json())
@@ -78,7 +78,7 @@ class ImageConverter:
                         output_file.write(chunk)
 
             # Print success message
-            print("Image downloaded successfully!")
+            print("Image downloaded successfully")
 
             # Copy the original image to the output directory
             shutil.copy(self.input_file_path, self.output_file_path.parent)

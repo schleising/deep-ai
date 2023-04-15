@@ -1,9 +1,17 @@
+# Wrap the api key read in a try except block
+try:
+    # Read api key from file
+    with open('api_key.txt', 'r') as api_key_file:
+        # Set api key
+        HEADERS = {
+            'api-key': api_key_file.read(),
+        }
+except FileNotFoundError:
+    # Print error message
+    print("api_key.txt not found")
+
 from .ImageConverter import ImageConverter
 
 __all__ = [
     "ImageConverter",
 ]
-
-HEADERS = {
-    'api-key': '5745a33f-4670-4ae4-8a64-fcfb668cea79',
-}

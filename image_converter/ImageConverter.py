@@ -4,6 +4,8 @@ import subprocess
 
 import requests
 
+from . import HEADERS
+
 class ImageConverter:
     def __init__(self, input_file_path: Path):
         # Set input and output file paths
@@ -36,7 +38,7 @@ class ImageConverter:
                 files={
                     'image': image_file,
                 },
-                headers={'api-key': '5745a33f-4670-4ae4-8a64-fcfb668cea79'}
+                headers=HEADERS,
             )
 
         # Check if request was successful

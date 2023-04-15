@@ -1,3 +1,6 @@
+import sys
+
+
 # Wrap the api key read in a try except block
 try:
     # Read api key from file
@@ -9,6 +12,9 @@ try:
 except FileNotFoundError:
     # Print error message
     print("api_key.txt not found")
+
+    # Exit program
+    sys.exit()
 
 from .ImageConverter import ImageConverter
 
